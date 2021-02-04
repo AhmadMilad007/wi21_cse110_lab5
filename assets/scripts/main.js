@@ -5,6 +5,7 @@ var soundEl = document.getElementById ("horn-sound");
 var Audbutton = document.getElementById ("honk-btn");
 var volumeN = document.getElementById ('volume-number');
 var volumeS = document.getElementById ('volume-slider');
+var volumeA = document.getElementById ('horn-sound');
 volumeN.onchange = function(e) {
 	//e.preventDefault();
 	console.log("here");
@@ -45,15 +46,21 @@ function visualDisc() {
 
 function play() {
 	soundEl.play();
+	//volumeAL();
 }
 function volumeNS() {
 	volumeS.value = volumeN.value;
 	audioIm ();
-
+	audioLv();
 }
 function volumeSN() {
 	volumeN.value = volumeS.value;
 	audioIm ();
+	audioLv();
+	//volumeA.volume =(volumeN.value/100);
+}
+function audioLv(){
+	volumeA.volume =(volumeS.value/100);
 }
 
 function audioIm () {
