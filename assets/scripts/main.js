@@ -66,17 +66,22 @@ function audioLv(){
 function audioIm () {
 	var level = volumeN.value;
 	var imVolume = document.getElementById('volume-image');
+	var buttonD= document.getElementById('honk-btn');
 	if (level > 66 && level < 101) {
 		imVolume.src = "./assets/media/icons/volume-level-3.svg";
+		buttonD.disabled = false;
 	}
 	else if (level > 33 && level < 67){
 		imVolume.src = "./assets/media/icons/volume-level-2.svg";
+		buttonD.disabled = false;
 	}
 	else if (level > 0 && level < 34) {
 		imVolume.src = "./assets/media/icons/volume-level-1.svg";
+		buttonD.disabled = false; 
 	}
 	else {
 		imVolume.src = "./assets/media/icons/volume-level-0.svg";
+		buttonD.disabled = true; 
 	}
 }
 // TOD
