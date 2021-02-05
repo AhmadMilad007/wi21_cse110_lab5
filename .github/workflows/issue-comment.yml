@@ -8,8 +8,9 @@ jobs:
    if: github.event_name == 'issues'
    runs-on: ubuntu-latest
    steps:
-      - uses: actions/checkout@v2.0.0
-      - id: prComment
+      - name: Add funny Comment
+      - uses: Marta83/funny-comment-action@v2.1
+      - id: FunnyComment
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
