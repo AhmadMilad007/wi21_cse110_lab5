@@ -4,9 +4,10 @@ on:
     types: [opened]
 
 jobs:
-   if: github.event_name == 'pull_request' || github.event_name == 'issues'
+  comment: 
+   if: github.event_name == 'issues'
    runs-on: ubuntu-latest
-    steps:
+   steps:
       - uses: actions/checkout@v2.0.0
       - id: prComment
         uses: ./
