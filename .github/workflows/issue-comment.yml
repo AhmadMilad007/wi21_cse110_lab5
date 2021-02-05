@@ -5,6 +5,7 @@ on:
 job: 
   comment: 
     if: github.event_name == 'issues';
+    runs-on: ubuntu-latest
     steps:
         name: Add Funny Gifs
         uses: Marta83/funny-comment-action@v2.1
