@@ -12,5 +12,6 @@ jobs:
         uses: actions/checkout@v2.0.0
         id: FunnyComment
         with:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
           comment_type: 'gif'
