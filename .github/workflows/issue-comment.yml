@@ -4,11 +4,12 @@ on:
     types: [opened]
 
 jobs:
-    if: github.event_name == 'issues'
+   if: github.event_name == 'pull_request' || github.event_name == 'issues'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.0.0
-      - id: FunnyComment
+      - id: prComment
+        uses: ./
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIPHY_TOKEN: ${{ secrets.GIPHY_TOKEN }}
